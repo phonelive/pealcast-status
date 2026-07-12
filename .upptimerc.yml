@@ -14,11 +14,16 @@ sites:
   - name: App
     url: https://app.pealcast.io
     icon: https://pealcast.io/favicon.svg
-  - name: Player
-    url: https://player.pealcast.io
-    icon: https://pealcast.io/favicon.svg
   - name: API
     url: https://api.pealcast.io/health
+    icon: https://pealcast.io/favicon.svg
+  # Live streaming edge — a bare HTTP GET doesn't return 200 (the CDN serves
+  # streams, not a page), so check TCP reachability on 443 (like PhoneLive's
+  # tcp-ping on its stream port) rather than an HTTP status.
+  - name: Live
+    url: live.pealcast.io
+    check: tcp-ping
+    port: 443
     icon: https://pealcast.io/favicon.svg
 
 status-website:
