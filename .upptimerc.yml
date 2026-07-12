@@ -1,31 +1,55 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# PealCast status page + uptime monitor — powered by Upptime (free: GitHub
+# Actions monitor the endpoints, Issues are incidents, Pages hosts the site).
+# Incidents auto-open/close as issues; the GitHub Issues Atom feed
+# (https://github.com/phonelive/pealcast-status/issues.atom) is the RSS feed our
+# API polls to text status subscribers from the support line. See the pealcast
+# repo: docs/2026-07-12-status-page-and-sms-alerts.md.
+owner: phonelive
+repo: pealcast-status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
+  - name: Website
+    url: https://pealcast.io
+    icon: https://pealcast.io/favicon.svg
+  - name: App
+    url: https://app.pealcast.io
+    icon: https://pealcast.io/favicon.svg
+  - name: Player
+    url: https://player.pealcast.io
+    icon: https://pealcast.io/favicon.svg
+  - name: API
+    url: https://api.pealcast.io/health
+    icon: https://pealcast.io/favicon.svg
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  theme: light
+  cname: status.pealcast.io
+  name: PealCast Status
+  favicon: https://pealcast.io/favicon.svg
+  logoUrl: https://pealcast.io/favicon.svg
+  introTitle: "PealCast System Status"
+  introMessage: >-
+    Live status of PealCast — streaming, notifications, the watch player, and the
+    API. Want a text when something goes down or is restored? **Text STATUS to our
+    support line** and we'll keep you posted (reply STOP anytime).
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+    - title: Home
+      href: https://pealcast.io/
+    - title: App
+      href: https://app.pealcast.io/
+    - title: Support
+      href: https://pealcast.io/contact
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+# Uptime checked every 5 minutes (like PhoneLive); the heavier site/graph/summary
+# regenerations every 30. Response-time + uptime badges refresh on each run.
+workflowSchedule:
+  graphs: "0 0 * * *"
+  responseTime: "*/30 * * * *"
+  staticSite: "*/30 * * * *"
+  summary: "*/30 * * * *"
+  uptime: "*/5 * * * *"
+
+i18n:
+  footer: "© PealCast — a Smart Talk company"
