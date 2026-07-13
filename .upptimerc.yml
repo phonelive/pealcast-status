@@ -37,7 +37,7 @@ status-website:
   cname: status.pealcast.io
   name: PealCast Status
   favicon: https://pealcast.io/favicon.svg
-  logoUrl: https://pealcast.io/favicon.svg
+  logoUrl: https://pealcast.io/pealcast-logo.svg
   # PealCast branding + the "Text STATUS" SMS section + a plain-English legend of
   # what each monitor is. Upptime injects this verbatim into <head>: a <style>
   # that recolors the generated page to the Peal brand (cream/navy/brass, Georgia
@@ -119,12 +119,24 @@ status-website:
           card.appendChild(p);
         });
       }
-      function run(){injectSms();injectNotes();}
+      function stripStatusEmoji(){document.querySelectorAll('main article.up:not(.graph) h4,main article.down:not(.graph) h4,main h1,main h2').forEach(function(el){if(el.dataset.pcClean)return;var f=el.firstChild;if(f&&f.nodeType===3){var u=f.nodeValue.replace(/^[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}✅❌️\s]+/u,'');if(u!==f.nodeValue){f.nodeValue=u;el.dataset.pcClean='1';}}});}
+      function run(){injectSms();injectNotes();stripStatusEmoji();}
       if(document.readyState!=='loading'){run();}else{document.addEventListener('DOMContentLoaded',run);}
       var n=0,t=setInterval(function(){run(); if(++n>20)clearInterval(t);},300);
       var m=document.querySelector('main.container');
       if(m&&window.MutationObserver){new MutationObserver(function(){injectNotes();}).observe(m,{childList:true,subtree:true});}
     })();
+    </script>
+    <!-- PealCast analytics — GA + MS Clarity, both tagged app_type=status so this
+         surface can be filtered/segmented (or filtered OUT) in GA and Clarity. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QC6C7VVS2"></script>
+    <script>
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+    gtag('js',new Date());
+    gtag('set','user_properties',{app_type:'status'});
+    gtag('config','G-3QC6C7VVS2',{app_type:'status'});
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","xjw3es6sls");
+    try{clarity('set','app_type','status')}catch(e){}
     </script>
   introTitle: "PealCast System Status"
   introMessage: >-
