@@ -10,11 +10,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 240,
-    "timeDay": 310,
-    "timeWeek": 240,
-    "timeMonth": 240,
-    "timeYear": 240,
+    "time": 244,
+    "timeDay": 260,
+    "timeWeek": 244,
+    "timeMonth": 244,
+    "timeYear": 244,
     "dailyMinutesDown": {}
   },
   {
@@ -28,11 +28,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 248,
-    "timeDay": 425,
-    "timeWeek": 248,
-    "timeMonth": 248,
-    "timeYear": 248,
+    "time": 238,
+    "timeDay": 200,
+    "timeWeek": 238,
+    "timeMonth": 238,
+    "timeYear": 238,
     "dailyMinutesDown": {}
   },
   {
@@ -46,11 +46,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 320,
-    "timeDay": 353,
-    "timeWeek": 320,
-    "timeMonth": 320,
-    "timeYear": 320,
+    "time": 290,
+    "timeDay": 202,
+    "timeWeek": 290,
+    "timeMonth": 290,
+    "timeYear": 290,
     "dailyMinutesDown": {}
   },
   {
@@ -64,11 +64,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 942,
-    "timeDay": 281,
-    "timeWeek": 942,
-    "timeMonth": 942,
-    "timeYear": 942,
+    "time": 798,
+    "timeDay": 226,
+    "timeWeek": 798,
+    "timeMonth": 798,
+    "timeYear": 798,
     "dailyMinutesDown": {}
   },
   {
@@ -77,18 +77,19 @@
     "icon": "https://pealcast.io/favicon.svg",
     "slug": "live-rtmp-srt-ingest",
     "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "uptime": "71.13%",
+    "uptimeDay": "11.90%",
+    "uptimeWeek": "71.13%",
+    "uptimeMonth": "71.13%",
+    "uptimeYear": "71.13%",
     "time": 5,
-    "timeDay": 2,
+    "timeDay": 0,
     "timeWeek": 5,
     "timeMonth": 5,
     "timeYear": 5,
     "dailyMinutesDown": {
-      "2026-07-15": 0
+      "2026-07-16": 41,
+      "2026-07-15": 1228
     }
   }
 ]
