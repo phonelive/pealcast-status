@@ -1,4 +1,4 @@
-# [📈 Live Status](https://status.pealcast.io): <!--live status--> **🟧 Partial outage**
+# [📈 Live Status](https://status.pealcast.io): <!--live status--> **🟩 All systems operational**
 
 This repository contains the open-source uptime monitor and status page for [PealCast](https://pealcast.io), powered by [Upptime](https://github.com/upptime/upptime).
 
