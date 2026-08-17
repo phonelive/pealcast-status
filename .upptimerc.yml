@@ -152,7 +152,7 @@ status-website:
   introTitle: "PealCast System Status"
   introMessage: >-
     Live status of PealCast — the marketing site, the church dashboard, the watch
-    player, the API, and live streaming. Below is a real-time check of each.
+    player, and the API. Below is a real-time check of each.
   navbar:
     - title: Status
       href: /
