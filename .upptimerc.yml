@@ -22,6 +22,18 @@ sites:
   - name: API
     url: https://api.pealcast.io/health
     icon: https://pealcast.io/favicon.svg
+  # Live streaming — checked via OUR OWN health endpoint, never by probing the
+  # ingest edge. The retired tcp-ping to live.pealcast.io:1935 could not reach
+  # Cloudflare's shared anycast edge from a GitHub Actions runner and reported a
+  # month of false downtime; even connecting would not have proven our ingest
+  # works. GET /health/streaming answers a question we can actually answer — an
+  # active host with credentials and no sustained platform errors — and returns
+  # 503 only when streaming genuinely is not serviceable. A missing local signing
+  # key is reported as degraded, NOT down, because playback falls back to
+  # Cloudflare-signed tokens. See the pealcast repo: app/controllers/health.rb.
+  - name: Live streaming
+    url: https://api.pealcast.io/health/streaming
+    icon: https://pealcast.io/favicon.svg
 
 status-website:
   theme: light
@@ -109,7 +121,8 @@ status-website:
         'Website':'Our marketing site (pealcast.io), where churches learn about PealCast.',
         'App':'The church dashboard (app.pealcast.io) — set up channels, go live, and see who watched.',
         'Player':'The watch page (player.pealcast.io) where your congregation streams the service.',
-        'API':'The backend (api.pealcast.io) that powers sign-in, streaming, notifications, and stats.'
+        'API':'The backend (api.pealcast.io) that powers sign-in, streaming, notifications, and stats.',
+        'Live streaming':'Whether we can take your feed and serve it to viewers right now.'
       };
       function injectSms(){
         var main=document.querySelector('main.container'); if(!main||document.querySelector('.pc-sms'))return;
@@ -152,7 +165,7 @@ status-website:
   introTitle: "PealCast System Status"
   introMessage: >-
     Live status of PealCast — the marketing site, the church dashboard, the watch
-    player, and the API. Below is a real-time check of each.
+    player, the API, and live streaming. Below is a real-time check of each.
   navbar:
     - title: Status
       href: /
