@@ -22,15 +22,6 @@ sites:
   - name: API
     url: https://api.pealcast.io/health
     icon: https://pealcast.io/favicon.svg
-  # Live = the streaming INGEST edge (RTMP/SRT), not a web page — so check the
-  # ingest reachable over TCP, not HTTP. RTMP ingest is TCP/1935 → tcp-ping.
-  # (SRT is UDP and resolves to the same edge, so Upptime's TCP check can't add a
-  # separate SRT signal; true UDP/SRT-handshake monitoring is outside Upptime.)
-  - name: Live (RTMP/SRT ingest)
-    url: live.pealcast.io
-    check: tcp-ping
-    port: 1935
-    icon: https://pealcast.io/favicon.svg
 
 status-website:
   theme: light
@@ -118,8 +109,7 @@ status-website:
         'Website':'Our marketing site (pealcast.io), where churches learn about PealCast.',
         'App':'The church dashboard (app.pealcast.io) — set up channels, go live, and see who watched.',
         'Player':'The watch page (player.pealcast.io) where your congregation streams the service.',
-        'API':'The backend (api.pealcast.io) that powers sign-in, streaming, notifications, and stats.',
-        'Live':'The streaming edge (RTMP/SRT) your encoder pushes to when you go live.'
+        'API':'The backend (api.pealcast.io) that powers sign-in, streaming, notifications, and stats.'
       };
       function injectSms(){
         var main=document.querySelector('main.container'); if(!main||document.querySelector('.pc-sms'))return;
